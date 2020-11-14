@@ -1,0 +1,109 @@
+.container {
+  padding: 0px 15px;
+  margin: 0 auto;
+
+  @media screen (min-width: 320px) {
+    width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+}
+
+.review {
+  width: 1258px;
+  height: 571px;
+  margin: 0 auto;
+}
+
+.reviews-alumni {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 130%;
+
+  margin-top: 130px;
+  margin-bottom: 50px;
+
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $title-color;
+}
+
+.reviw-container {
+  width: 1090px;
+  height: 370px;
+  display: flex;
+  margin: 0 auto;
+
+  margin-bottom: 40px;
+
+  background: $dark-theme-text-color;
+  box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+}
+
+.image {
+  margin-top: 50px;
+  margin-left: 82px;
+  margin-bottom: 170px;
+}
+.review-all {
+  padding-left: 40px;
+  padding-right: 112px;
+  margin-top: 50px;
+}
+.review-main {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 37px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+
+  letter-spacing: 0.08em;
+
+  color: $accent-color;
+}
+
+.review-description {
+  font-family: $main-font;
+  font-style: normal;
+  width: 438px;
+  height: 34px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.08em;
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  color: main-text-color;
+}
+.review-text {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+
+  padding-bottom: 51px;
+
+  color: $secondary-text-color;
+}
+
+.review-img-list {
+  display: block;
+
+  width: 558px;
+  height: 54px;
+  margin-top: 40px;
+  padding-left: 0px;
+}
+
+.review-image:not(:last-child) {
+  margin-right: 25px;
+}
