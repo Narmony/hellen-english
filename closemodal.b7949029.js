@@ -117,83 +117,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+})({"js/closemodal.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+    header: document.querySelector('header')
   };
+  refs.header.addEventListener('click', toggleModal);
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
+  function toggleModal(e) {
+    if (e.target.closest('button') === refs.openModalBtn || e.target.closest('button') === refs.closeModalBtn || e.target.href) {
+      refs.modal.classList.toggle('is-hidden');
     }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../images/hero/hero-mobile.png":[["hero-mobile.31ec35d9.png","images/hero/hero-mobile.png"],"images/hero/hero-mobile.png"],"./../images/hero/hero-wave-mobile.svg":[["hero-wave-mobile.b3256d83.svg","images/hero/hero-wave-mobile.svg"],"images/hero/hero-wave-mobile.svg"],"./../images/hero/hero-tablet.png":[["hero-tablet.2cf74668.png","images/hero/hero-tablet.png"],"images/hero/hero-tablet.png"],"./../images/hero/hero-wave-tablet.svg":[["hero-wave-tablet.53035141.svg","images/hero/hero-wave-tablet.svg"],"images/hero/hero-wave-tablet.svg"],"./../images/hero/hero-desktop.png":[["hero-desktop.54ed7088.png","images/hero/hero-desktop.png"],"images/hero/hero-desktop.png"],"./../images/hero/hero-wave-desktop.svg":[["hero-wave-desktop.45b0b0c9.svg","images/hero/hero-wave-desktop.svg"],"images/hero/hero-wave-desktop.svg"],"./../images/advantages/author-mobile.svg":[["author-mobile.296af0c7.svg","images/advantages/author-mobile.svg"],"images/advantages/author-mobile.svg"],"./../images/advantages/method-mobile.svg":[["method-mobile.90fbb99f.svg","images/advantages/method-mobile.svg"],"images/advantages/method-mobile.svg"],"./../images/advantages/result-mobile.svg":[["result-mobile.a36cfe8f.svg","images/advantages/result-mobile.svg"],"images/advantages/result-mobile.svg"],"./../images/advantages/author-desktop.svg":[["author-desktop.44004c83.svg","images/advantages/author-desktop.svg"],"images/advantages/author-desktop.svg"],"./../images/advantages/method-desktop.svg":[["method-desktop.a5cd6069.svg","images/advantages/method-desktop.svg"],"images/advantages/method-desktop.svg"],"./../images/advantages/result-desktop.svg":[["result-desktop.8326598d.svg","images/advantages/result-desktop.svg"],"images/advantages/result-desktop.svg"],"./../images/wawe.png":[["wawe.06a60873.png","images/wawe.png"],"images/wawe.png"],"./../images/program/program-bg-mobile.png":[["program-bg-mobile.1a2bdee7.png","images/program/program-bg-mobile.png"],"images/program/program-bg-mobile.png"],"./../images/ellipse.svg":[["ellipse.3e233546.svg","images/ellipse.svg"],"images/ellipse.svg"],"./../images/program/program-bg-mobile@2x.png":[["program-bg-mobile@2x.03e2f47b.png","images/program/program-bg-mobile@2x.png"],"images/program/program-bg-mobile@2x.png"],"./../images/program/program-bg-tablet.png":[["program-bg-tablet.5f37eecb.png","images/program/program-bg-tablet.png"],"images/program/program-bg-tablet.png"],"./../images/program/program-bg-tablet@2x.png":[["program-bg-tablet@2x.805983c3.png","images/program/program-bg-tablet@2x.png"],"images/program/program-bg-tablet@2x.png"],"./../images/program/program-bg-desktop.png":[["program-bg-desktop.c4b10d7a.png","images/program/program-bg-desktop.png"],"images/program/program-bg-desktop.png"],"./../images/program/program-bg-desktop@2x.png":[["program-bg-desktop@2x.11608f7f.png","images/program/program-bg-desktop@2x.png"],"images/program/program-bg-desktop@2x.png"],"/Users/maria/Documents/GitHub/hellen-english/src/images/mentors/list.svg":[["list.7db06fd2.svg","images/mentors/list.svg"],"images/mentors/list.svg"],"/Users/maria/Documents/GitHub/hellen-english/src/images/mentors/list2.svg":[["list2.ab6f9457.svg","images/mentors/list2.svg"],"images/mentors/list2.svg"],"./../images/registration/bg-mobile.png":[["bg-mobile.fddc7285.png","images/registration/bg-mobile.png"],"images/registration/bg-mobile.png"],"./../images/registration/bg-mobile@2x.png":[["bg-mobile@2x.c3839c43.png","images/registration/bg-mobile@2x.png"],"images/registration/bg-mobile@2x.png"],"./../images/registration/bg-tablet.png":[["bg-tablet.4f15ea8f.png","images/registration/bg-tablet.png"],"images/registration/bg-tablet.png"],"./../images/registration/bg-tablet@2x.png":[["bg-tablet@2x.0552fa03.png","images/registration/bg-tablet@2x.png"],"images/registration/bg-tablet@2x.png"],"./../images/registration/bg-deckstop.png":[["bg-deckstop.c4e2c781.png","images/registration/bg-deckstop.png"],"images/registration/bg-deckstop.png"],"./../images/registration/bg-deckstop@2x.png":[["bg-deckstop@2x.1256a7a3.png","images/registration/bg-deckstop@2x.png"],"images/registration/bg-deckstop@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  }
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +337,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/closemodal.js"], null)
+//# sourceMappingURL=/closemodal.b7949029.js.map
