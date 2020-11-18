@@ -72,6 +72,7 @@ img {
 
 .container {
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 320px) {
@@ -1482,13 +1483,13 @@ html {
 }
 
 @media screen and (min-width: 320px) {
-  .container {
+  .container-blok {
     width: 310px;
     margin: 0 auto;
   }
 }
 @media screen and (min-width: 768px) {
-  .container {
+  .container-blok {
     width: 718px;
     margin: 0 auto;
   }
@@ -1519,6 +1520,10 @@ html {
   }
 }
 @media screen and (min-width: 1344px) {
+  .container-blok {
+    width: 1344px;
+  }
+
   .mentors {
     padding: 130px 0;
   }
