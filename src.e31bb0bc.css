@@ -216,6 +216,7 @@ html {
   background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .navigation {
@@ -495,12 +496,6 @@ html {
     width: 100%;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .hero .container {
-    width: 310px;
-    margin: 0 auto;
-  }
-}
 @media screen and (max-width: 767px) {
   .hero {
     padding-top: 110px;
@@ -536,10 +531,6 @@ html {
     background-image: url("/hero-tablet.2cf74668.png"), url("/hero-wave-tablet.53035141.svg");
     background-position: top 172px left calc(50% + 175px), left bottom 20px;
     background-size: 376px, 100% 556px;
-  }
-  .hero .container {
-    width: 718px;
-    margin: 0 auto;
   }
   .hero__content {
     width: 332px;
@@ -583,10 +574,6 @@ html {
     width: 100%;
     padding-top: 224px;
     padding-bottom: 241px;
-  }
-  .hero .container {
-    width: 1344px;
-    margin: 0 auto;
   }
   .hero__content {
     max-width: 670px;
@@ -638,12 +625,6 @@ html {
     width: 100%;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .advantages .container {
-    width: 310px;
-    margin: 0 auto;
-  }
-}
 @media screen and (max-width: 767px) {
   .advantages__list {
     width: 216px;
@@ -654,10 +635,6 @@ html {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1343px) {
-  .advantages .container {
-    width: 718px;
-    margin: 0 auto;
-  }
   .advantages__list {
     display: flex;
     justify-content: space-between;
@@ -692,10 +669,6 @@ html {
   .advantages {
     width: 100%;
     padding-bottom: 130px;
-  }
-  .advantages .container {
-    width: 1344px;
-    margin: 0 auto;
   }
   .advantages__list {
     display: flex;
@@ -806,7 +779,7 @@ html {
     padding-right: 46px;
     position: absolute;
     left: 15px;
-    top: 188px;
+    top: 130px;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -1587,9 +1560,6 @@ html {
   background-color: #f1f1f1;
 }
 
-.warranty {
-  padding-bottom: 50px;
-}
 .warranty__container {
   width: 280px;
 }
@@ -1655,7 +1625,6 @@ html {
 
   .warranty {
     padding-bottom: 0;
-    margin-bottom: 130px;
   }
   .warranty__title {
     margin-bottom: 50px;
@@ -1757,7 +1726,7 @@ html {
     margin: 0 auto 20px;
   }
 }
-@media screen and (max-width: 1344px) {
+@media screen and (min-width: 768px) and (max-width: 1343px) {
   .review .review__container .review__container-photo {
     width: 120px;
     height: 120px;
@@ -2022,25 +1991,25 @@ html {
   cursor: pointer;
 }
 .slick-dots li:nth-child(1) button::after {
-  background-image: url("/photo6.edb0ec72.jpg");
+  background-image: url("/photo6.d0f1100e.png");
 }
 .slick-dots li:nth-child(2) button::after {
-  background-image: url("/photo2.256f53f2.jpg");
+  background-image: url("/photo2.cf5fb968.png");
 }
 .slick-dots li:nth-child(3) button::after {
-  background-image: url("/photo3.86b35f47.jpg");
+  background-image: url("/photo3.b12ddcc8.png");
 }
 .slick-dots li:nth-child(4) button::after {
-  background-image: url("/photo4.104ef75d.jpg");
+  background-image: url("/photo4.57cc6695.png");
 }
 .slick-dots li:nth-child(5) button::after {
-  background-image: url("/photo5.f63d6e50.jpg");
+  background-image: url("/photo5.9d40cac1.png");
 }
 .slick-dots li:nth-child(6) button::after {
-  background-image: url("/photo1.f9a97cf6.jpg");
+  background-image: url("/photo1.7a14bd5c.png");
 }
 .slick-dots li:nth-child(7) button::after {
-  background-image: url("/photo7.e150db48.jpg");
+  background-image: url("/photo7.b34f481f.png");
 }
 
 .registration {
