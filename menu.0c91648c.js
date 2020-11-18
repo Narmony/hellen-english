@@ -128,8 +128,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   refs.header.addEventListener('click', toggleModal);
 
   function toggleModal(e) {
-    if (e.target.closest('button') === refs.openModalBtn || e.target.closest('button') === refs.closeModalBtn || e.target.href) {
+    if (e.target.closest('button') === refs.openModalBtn || e.target.closest('button') === refs.closeModalBtn) {
       refs.modal.classList.toggle('is-hidden');
+    } else if (e.target.href) {
+      refs.modal.classList.add('is-hidden');
     }
   }
 })();
@@ -161,7 +163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53554" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49371" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -117,83 +117,125 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+})({"js/slider_option.js":[function(require,module,exports) {
+$(document).ready(function () {
+  $('.slider').slick({
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    speed: 1000,
+    easing: 'ease',
+    waitForAnimate: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        dots: false,
+        waitForAnimate: true,
+        asNavFor: ".small-slider"
       }
-    }
+    }]
+  });
+  $('.small-slider').slick({
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        adaptiveHeight: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: 20,
+        speed: 1000,
+        easing: 'ease',
+        waitForAnimate: true,
+        focusOnSelect: true,
+        asNavFor: ".slider"
+      }
+    }]
+  });
+});
+;
 
-    cssTimeout = null;
-  }, 50);
-}
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-1]");
+  var mobileMenuRef = document.querySelector("[feedback-text-1]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
 
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-2]");
+  var mobileMenuRef = document.querySelector("[feedback-text-2]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
 
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../images/hero/hero-mobile.png":[["hero-mobile.31ec35d9.png","images/hero/hero-mobile.png"],"images/hero/hero-mobile.png"],"./../images/hero/hero-wave-mobile.svg":[["hero-wave-mobile.b3256d83.svg","images/hero/hero-wave-mobile.svg"],"images/hero/hero-wave-mobile.svg"],"./../images/hero/hero-tablet.png":[["hero-tablet.2cf74668.png","images/hero/hero-tablet.png"],"images/hero/hero-tablet.png"],"./../images/hero/hero-wave-tablet.svg":[["hero-wave-tablet.53035141.svg","images/hero/hero-wave-tablet.svg"],"images/hero/hero-wave-tablet.svg"],"./../images/hero/hero-desktop.png":[["hero-desktop.54ed7088.png","images/hero/hero-desktop.png"],"images/hero/hero-desktop.png"],"./../images/hero/hero-wave-desktop.svg":[["hero-wave-desktop.45b0b0c9.svg","images/hero/hero-wave-desktop.svg"],"images/hero/hero-wave-desktop.svg"],"./../images/advantages/author-mobile.svg":[["author-mobile.296af0c7.svg","images/advantages/author-mobile.svg"],"images/advantages/author-mobile.svg"],"./../images/advantages/method-mobile.svg":[["method-mobile.90fbb99f.svg","images/advantages/method-mobile.svg"],"images/advantages/method-mobile.svg"],"./../images/advantages/result-mobile.svg":[["result-mobile.a36cfe8f.svg","images/advantages/result-mobile.svg"],"images/advantages/result-mobile.svg"],"./../images/advantages/author-desktop.svg":[["author-desktop.44004c83.svg","images/advantages/author-desktop.svg"],"images/advantages/author-desktop.svg"],"./../images/advantages/method-desktop.svg":[["method-desktop.a5cd6069.svg","images/advantages/method-desktop.svg"],"images/advantages/method-desktop.svg"],"./../images/advantages/result-desktop.svg":[["result-desktop.8326598d.svg","images/advantages/result-desktop.svg"],"images/advantages/result-desktop.svg"],"./../images/wawe.png":[["wawe.06a60873.png","images/wawe.png"],"images/wawe.png"],"./../images/program/program-bg-mobile.png":[["program-bg-mobile.1a2bdee7.png","images/program/program-bg-mobile.png"],"images/program/program-bg-mobile.png"],"./../images/ellipse.svg":[["ellipse.3e233546.svg","images/ellipse.svg"],"images/ellipse.svg"],"./../images/program/program-bg-mobile@2x.png":[["program-bg-mobile@2x.03e2f47b.png","images/program/program-bg-mobile@2x.png"],"images/program/program-bg-mobile@2x.png"],"./../images/program/program-bg-tablet.png":[["program-bg-tablet.5f37eecb.png","images/program/program-bg-tablet.png"],"images/program/program-bg-tablet.png"],"./../images/program/program-bg-tablet@2x.png":[["program-bg-tablet@2x.805983c3.png","images/program/program-bg-tablet@2x.png"],"images/program/program-bg-tablet@2x.png"],"./../images/program/program-bg-desktop.png":[["program-bg-desktop.c4b10d7a.png","images/program/program-bg-desktop.png"],"images/program/program-bg-desktop.png"],"./../images/program/program-bg-desktop@2x.png":[["program-bg-desktop@2x.11608f7f.png","images/program/program-bg-desktop@2x.png"],"images/program/program-bg-desktop@2x.png"],"/Users/maria/Documents/GitHub/hellen-english/src/images/mentors/list.svg":[["list.7db06fd2.svg","images/mentors/list.svg"],"images/mentors/list.svg"],"/Users/maria/Documents/GitHub/hellen-english/src/images/mentors/list2.svg":[["list2.ab6f9457.svg","images/mentors/list2.svg"],"images/mentors/list2.svg"],"./../images/review/svg/vk.svg":[["vk.798eb409.svg","images/review/svg/vk.svg"],"images/review/svg/vk.svg"],"./../images/review/svg/arrow_left.svg":[["arrow_left.fc9e34b8.svg","images/review/svg/arrow_left.svg"],"images/review/svg/arrow_left.svg"],"./../images/review/svg/arrow_right.svg":[["arrow_right.9ab7592b.svg","images/review/svg/arrow_right.svg"],"images/review/svg/arrow_right.svg"],"./../images/review/photo6.jpg":[["photo6.edb0ec72.jpg","images/review/photo6.jpg"],"images/review/photo6.jpg"],"./../images/review/photo2.jpg":[["photo2.256f53f2.jpg","images/review/photo2.jpg"],"images/review/photo2.jpg"],"./../images/review/photo3.jpg":[["photo3.86b35f47.jpg","images/review/photo3.jpg"],"images/review/photo3.jpg"],"./../images/review/photo4.jpg":[["photo4.104ef75d.jpg","images/review/photo4.jpg"],"images/review/photo4.jpg"],"./../images/review/photo5.jpg":[["photo5.f63d6e50.jpg","images/review/photo5.jpg"],"images/review/photo5.jpg"],"./../images/review/photo1.jpg":[["photo1.f9a97cf6.jpg","images/review/photo1.jpg"],"images/review/photo1.jpg"],"./../images/review/photo7.jpg":[["photo7.e150db48.jpg","images/review/photo7.jpg"],"images/review/photo7.jpg"],"./../images/registration/bg-mobile.png":[["bg-mobile.fddc7285.png","images/registration/bg-mobile.png"],"images/registration/bg-mobile.png"],"./../images/registration/bg-mobile@2x.png":[["bg-mobile@2x.c3839c43.png","images/registration/bg-mobile@2x.png"],"images/registration/bg-mobile@2x.png"],"./../images/registration/bg-tablet.png":[["bg-tablet.4f15ea8f.png","images/registration/bg-tablet.png"],"images/registration/bg-tablet.png"],"./../images/registration/bg-tablet@2x.png":[["bg-tablet@2x.0552fa03.png","images/registration/bg-tablet@2x.png"],"images/registration/bg-tablet@2x.png"],"./../images/registration/bg-deckstop.png":[["bg-deckstop.c4e2c781.png","images/registration/bg-deckstop.png"],"images/registration/bg-deckstop.png"],"./../images/registration/bg-deckstop@2x.png":[["bg-deckstop@2x.1256a7a3.png","images/registration/bg-deckstop@2x.png"],"images/registration/bg-deckstop@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-3]");
+  var mobileMenuRef = document.querySelector("[feedback-text-3]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
 
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-4]");
+  var mobileMenuRef = document.querySelector("[feedback-text-4]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
+
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-5]");
+  var mobileMenuRef = document.querySelector("[feedback-text-5]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
+
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-6]");
+  var mobileMenuRef = document.querySelector("[feedback-text-6]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
+
+(function () {
+  var menuBtnRef = document.querySelector("[feedback-switch-button-7]");
+  var mobileMenuRef = document.querySelector("[feedback-text-7]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("feedback-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("feedback-open");
+  });
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +439,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/slider_option.js"], null)
+//# sourceMappingURL=/slider_option.6cb1e505.js.map
