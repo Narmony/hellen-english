@@ -43,15 +43,6 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .hero {
-    & .container {
-      width: 310px;
-      margin: 0 auto;
-    }
-  }
-}
-
 @media screen and (max-width: 767px) {
   .hero {
     padding-top: 110px;
@@ -89,10 +80,7 @@
     background-image: url('./../images/hero/hero-tablet.png'), url('./../images/hero/hero-wave-tablet.svg');
     background-position: top 172px left calc(50% + 175px), left bottom 20px;
     background-size: 376px, 100% 556px;
-    .container {
-      width: 718px;
-      margin: 0 auto;
-    }
+
     &__content {
       width: 332px;
     }
@@ -138,10 +126,7 @@
     width: 100%;
     padding-top: 224px;
     padding-bottom: 241px;
-    .container {
-      width: 1344px;
-      margin: 0 auto;
-    }
+
     &__content {
       max-width: 670px;
     }
