@@ -424,12 +424,15 @@ html {
     display: none;
   }
 
+  .header__menu-container {
+    display: none;
+  }
+
   .navigation__link {
     padding: 27px 0;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.214;
-    /* identical to box height */
     text-transform: uppercase;
     color: #b9b9b9;
     transition-property: color;
@@ -569,7 +572,7 @@ html {
 }
 @media screen and (min-width: 1344px) {
   .hero {
-    max-width: 1688px;
+    width: 100%;
     padding-top: 224px;
     padding-bottom: 241px;
   }
@@ -678,7 +681,7 @@ html {
 }
 @media screen and (min-width: 1344px) {
   .advantages {
-    max-width: 1688px;
+    width: 100%;
     padding-bottom: 130px;
   }
   .advantages .container {
@@ -794,7 +797,7 @@ html {
     padding-right: 46px;
     position: absolute;
     left: 15px;
-    top: 126px;
+    top: 188px;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -921,6 +924,7 @@ html {
   padding-bottom: 22px;
   padding-left: 20px;
   padding-right: 20px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) and (max-width: 1343px) {
   .about__item {
@@ -942,6 +946,7 @@ html {
 }
 .about__item:hover {
   background-color: #ff6b09;
+  cursor: pointer;
 }
 .about__item:hover .about__svg {
   fill: #ffffff;
@@ -955,7 +960,7 @@ html {
     margin: 10px;
   }
 }
-@media screen and (min-width: 1343px) {
+@media screen and (min-width: 1344px) {
   .about__item {
     width: calc((100% - 3 * 20px) / 3);
     margin: 10px;
@@ -1509,11 +1514,7 @@ html {
     max-width: 401px;
   }
 }
-@media screen and (min-width: 1314px) {
-  .container {
-    width: 1344px;
-  }
-
+@media screen and (min-width: 1344px) {
   .mentors {
     padding: 130px 0;
   }
@@ -1626,7 +1627,7 @@ html {
     margin-left: 64px;
   }
 }
-@media screen and (min-width: 1314px) {
+@media screen and (min-width: 1344px) {
   .block-container {
     width: 1314px;
   }
@@ -1998,14 +1999,14 @@ section .review {
     background-image: url(/bg-tablet@2x.0552fa03.png);
   }
 }
-@media screen and (min-width: 1314px) {
+@media screen and (min-width: 1344px) {
   .registration {
     max-width: 1680px;
     margin: 0px auto;
     background-image: url(/bg-deckstop.c4e2c781.png);
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1314px), screen and (min-resolution: 192dpi) and (min-width: 1314px), screen and (min-resolution: 2dppx) and (min-width: 1314px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1344px), screen and (min-resolution: 192dpi) and (min-width: 1344px), screen and (min-resolution: 2dppx) and (min-width: 1344px) {
   .registration {
     background-image: url(/bg-deckstop@2x.1256a7a3.png);
   }
@@ -2020,12 +2021,12 @@ section .review {
 }
 @media screen and (min-width: 320px) {
   .registration-container .registration-container {
-    width: 320px;
+    width: 310px;
   }
 }
 @media screen and (min-width: 768px) {
   .registration-container .registration-container {
-    width: 768px;
+    width: 718px;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -2107,17 +2108,21 @@ section .review {
   display: flex;
   align-items: center;
   width: 100%;
+  height: 48px;
   margin: 0px auto;
   padding: 15px 28px;
   padding-bottom: 16px;
-  outline: 1px solid #ffffff;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.214;
   letter-spacing: 0.08em;
+  outline: none;
   color: #ffffff;
   border: 1px solid #ffffff;
   background-color: transparent;
+}
+.registration__form-input:hover, .registration__form-input:focus {
+  border: 2px solid #ff6b09;
 }
 @media screen and (min-width: 1344px) {
   .registration__form-input {
@@ -2141,6 +2146,7 @@ section .review {
 @media screen and (min-width: 1344px) {
   .registration__form-input {
     width: 478px;
+    height: 70px;
   }
 }
 .registration__form-input::placeholder {
@@ -2158,9 +2164,11 @@ section .review {
 }
 .registration__form-btn {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 14px 1px;
+  height: 48px;
+  padding: 1px 1px;
   margin: 0px auto;
   margin-top: 50px;
   border: none;
@@ -2172,9 +2180,16 @@ section .review {
   color: #ffffff;
   background-color: #ff6b09;
 }
+.registration__form-btn:hover, .registration__form-btn:focus {
+  background-color: #ffffff;
+  color: #ff6b09;
+  border: 2px solid #ff6b09;
+  cursor: pointer;
+}
 @media screen and (min-width: 320px) {
   .registration__form-btn {
     width: 260px;
+    padding: 14px 1px;
     margin-top: 31px;
   }
 }
@@ -2191,6 +2206,7 @@ section .review {
 @media screen and (min-width: 1344px) {
   .registration__form-btn {
     width: 354px;
+    height: 70px;
     font-size: 14px;
     padding: 0px 25px;
     padding-top: 27px;
