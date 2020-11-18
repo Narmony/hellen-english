@@ -413,6 +413,8 @@ html {
     height: 70px;
     width: 336px;
     text-align: center;
+    font-weight: 700;
+    font-size: 14px;
   }
 
   header {
@@ -1021,6 +1023,10 @@ html {
   }
 }
 
+.program {
+  min-width: 320px;
+}
+
 .program .container {
   margin: 0 auto;
   padding-bottom: 532px;
@@ -1118,15 +1124,19 @@ html {
 
   .program__list-subtitle::before {
     top: 8px;
-    left: -36px;
+    left: -31px;
   }
 
   .program__list {
-    padding-left: 105px;
+    padding-left: 100px;
   }
 
   .program__sublist-content {
     max-width: 176px;
+  }
+
+  .program__sublist-subtitle--3sem {
+    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 1343px) {
@@ -1134,7 +1144,7 @@ html {
     position: absolute;
     content: "";
     display: block;
-    top: 19px;
+    top: 13px;
     left: 74px;
     width: 2px;
     height: 1282px;
