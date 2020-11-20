@@ -502,7 +502,7 @@ html {
     padding-bottom: 284px;
     background-image: url("/hero-mobile.31ec35d9.png"), url("/hero-wave-mobile.b3256d83.svg");
     background-position: 50% 394px, left bottom;
-    background-size: 208px, 100% 618px;
+    background-size: 208px, 100% 100%;
   }
   .hero__title {
     font-size: 20px;
@@ -529,8 +529,8 @@ html {
     padding-top: 158px;
     padding-bottom: 142px;
     background-image: url("/hero-tablet.2cf74668.png"), url("/hero-wave-tablet.53035141.svg");
-    background-position: top 172px left calc(50% + 175px), left bottom 20px;
-    background-size: 376px, 100% 556px;
+    background-position: top 172px left calc(50% + 175px), left bottom;
+    background-size: 376px, 100% 100%;
   }
   .hero__content {
     width: 332px;
@@ -559,14 +559,14 @@ html {
   .hero {
     background-image: url("/hero-desktop.54ed7088.png"), url("/hero-wave-desktop.45b0b0c9.svg");
     background-position: top 172px left calc(50% + 300px), left bottom;
-    background-size: 730px, 100% 878px;
+    background-size: 730px, 100% 100%;
   }
 }
 @media screen and (min-width: 1580px) {
   .hero {
     background-image: url("/hero-desktop.54ed7088.png"), url("/hero-wave-desktop.45b0b0c9.svg");
     background-position: top 172px left calc(50% + 350px), left bottom;
-    background-size: 842px, 100% 878px;
+    background-size: 842px, 100% 100%;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -1700,12 +1700,12 @@ html {
 @media screen and (min-width: 768px) {
   .review .review__container {
     justify-content: space-between;
-    max-width: 580px;
+    max-width: 630px;
   }
 }
 @media screen and (min-width: 1344px) {
   .review .review__container {
-    padding: 50px 50px 50px 80px;
+    padding: 50px 112px 50px 80px;
     max-width: 1090px;
   }
 }
@@ -1724,12 +1724,6 @@ html {
     width: 90px;
     height: 90px;
     margin: 0 auto 20px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1343px) {
-  .review .review__container .review__container-photo {
-    width: 120px;
-    height: 120px;
   }
 }
 .review .review__container .review__vk {
@@ -1961,7 +1955,6 @@ html {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin-left: 120px;
 }
 .slick-dots li:not(:last-child) {
   margin-right: 30px;
